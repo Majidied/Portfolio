@@ -74,7 +74,7 @@
                 <!-- Add Project Form -->
                 <section id="add-project" class="mb-8">
                     <h2 class="text-lg font-semibold mb-4">Add Project</h2>
-                    <form action="" method="POST" class="space-y-4">
+                    <form action="{{route('add-project')}}" method="POST" class="space-y-4">
                         @csrf
                         <div>
                             <label for="title" class="block font-semibold">Project Title</label>

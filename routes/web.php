@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\skillsController;
 use App\Http\Controllers\clientsController;
@@ -14,12 +15,16 @@ Route::post('/api/contacts', [contactsController::class, 'store']);
 Route::get('/api/contacts', [contactsController::class, 'getAllMessages'])->name('contacts');
 Route::post('/api/clients', [clientsController::class,'store'])->name('add-client');
 Route::post('api/skills', [skillsController::class, 'store'])->name('add-skill');
-
+Route::post('/api/projects', [projectsController::class, 'addproject'])->name('add-project');
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', [DashboardController::class,'index']) ->name('dashboard');
+Route::get('/admin', function() {
+    return view('Admin.admin');
+});
+Route::post('/admin', [adminController::class,'verifyAdmin'])->name('admin.login');
 Route::get('/portfolio', function() {
     return view('portfolio');
 });
