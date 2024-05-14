@@ -13,11 +13,14 @@ Route::get('/api/clients', [clientsController::class,'getClients']);
 Route::get('/api/projects', [projectsController::class, 'getProjects']);
 Route::post('/api/contacts', [contactsController::class, 'store']);
 Route::get('/api/contacts', [contactsController::class, 'getAllMessages'])->name('contacts');
+Route::post('/api/clients', [clientsController::class,'store'])->name('add-client');
+Route::post('api/skills', [skillsController::class, 'store'])->name('add-skill');
 Route::post('/api/projects', [projectsController::class, 'addproject'])->name('add-project');
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', [DashboardController::class,'index']) ->name('dashboard');
 Route::get('/admin', function() {
     return view('Admin.admin');
 });
