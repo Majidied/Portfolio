@@ -16,6 +16,17 @@ class projectsController extends Controller
         return $projects;
     }
 
+    public function addproject(Request $request)
+    {
+        $project = new projects();
+        $project->title = $request->title;
+        $project->description = $request->description;
+        $project->image = $request->image;
+        $project->githubLink = $request->githubLink;
+        $project->save();
+        return redirect()->back()->with('success', 'Project added successfully!');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
