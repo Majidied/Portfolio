@@ -112,54 +112,36 @@
         <div class="container mx-auto">
             <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Projects</h2>
             <!-- Project Items -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project item -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="project_image1.png" alt="Project 1" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-xl font-bold text-gray-800 mb-3">Project Title</h2>
-                        <p class="text-gray-700">Brief description of the project goes here.</p>
-                        <a href="#"
-                            class="block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">View
-                            on GitHub</a>
-                    </div>
-                </div>
-                <!-- Project item -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="project_image2.png" alt="Project 2" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-xl font-bold text-gray-800 mb-3">Project Title</h2>
-                        <p class="text-gray-700">Brief description of the project goes here.</p>
-                        <a href="#"
-                            class="block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">View
-                            on GitHub</a>
-                    </div>
-                </div>
-                <!-- Project item -->
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="project_image3.png" alt="Project 3" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-xl font-bold text-gray-800 mb-3">Project Title</h2>
-                        <p class="text-gray-700">Brief description of the project goes here.</p>
-                        <a href="#"
-                            class="block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">View
-                            on GitHub</a>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="project-container">
+                <!-- Projects will be appended here dynamically -->
             </div>
         </div>
     </section>
+    <script src="/js/getProjects.js"></script>
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-10">
         <div class="container mx-auto text-center">
             <h2 class="text-2xl font-bold text-gray-800 mb-4">Let's Work Together</h2>
-            <p class="text-lg text-gray-700 mb-8">Feel free to get in touch with me for any inquiries or collaboration
-                opportunities.</p>
-            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Contact Me</a>
+            <p class="text-lg text-gray-700 mb-8">Feel free to get in touch with me for any inquiries or collaboration opportunities.</p>
+            <form method="POST" action="{{route('contacts')}}" id="contact-form" >
+                @csrf
+                <div class="mb-4">
+                    <input type="text" name="name" placeholder="Your Name" class="bg-gray-100 rounded-md px-4 py-2 w-full">
+                </div>
+                <div class="mb-4">
+                    <input type="email" name="email" placeholder="Your Email" class="bg-gray-100 rounded-md px-4 py-2 w-full">
+                </div>
+                <div class="mb-4">
+                    <textarea name="message" placeholder="Your Message" class="bg-gray-100 rounded-md px-4 py-2 w-full" rows="4"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Submit</button>
+            </form>
         </div>
     </section>
-    <script></script>
+
 </body>
 
 </html>
