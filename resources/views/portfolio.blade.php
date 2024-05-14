@@ -114,7 +114,6 @@
             </div>
         </div>
     </section>
-    <script src="/js/getProjects.js"></script>
 
 
 
@@ -139,6 +138,9 @@
         </div>
     </section>
     <script></script>
+    <script src="/js/getSkills.js"></script>
+    <script src="/js/getProjects.js"></script>
+    <script src="/js/getClients.js"></script>
 </body>
 
 </html>
