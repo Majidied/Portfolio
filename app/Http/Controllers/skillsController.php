@@ -12,4 +12,14 @@ class skillsController extends Controller
         $skills = skills::all();
         return $skills;
     }
+
+    public function store(Request $request)
+    {
+        $skills = new skills();
+        $skills->title = $request->title;
+        $skills->url = $request->url;
+        $skills->category = $request->category;
+        $skills->save();
+        return redirect()->back()->with("success","Skill saved successfully");
+    }
 }
