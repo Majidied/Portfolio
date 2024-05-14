@@ -17,8 +17,12 @@ class skillsFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(),
-            'url' => $this->faker->imageUrl(),
+            'title' => $this->faker->randomElement(['Laravel', 'Vue', 'React', 'Angular']),
+            'url' => $this->faker->randomElement([
+                'https://cdn-icons-png.freepik.com/512/2814/2814214.png?ga=GA1.2.1367360965.1710516210',
+                'https://cdn-icons-png.freepik.com/512/10903/10903984.png?ga=GA1.2.1367360965.1710516210',
+                'https://cdn-icons-png.freepik.com/512/3047/3047134.png?ga=GA1.2.1367360965.1710516210'
+            ]),
             'category' => $this->faker->randomElement(['Back-end','Front-end', 'Desktop']),
         ];
     }
