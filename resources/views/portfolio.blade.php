@@ -98,11 +98,8 @@
         <div class="container mx-auto">
             <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Clients</h2>
             <!-- Client Logos -->
-            <div class="flex items-center justify-center space-x-8">
-                <img src="client_logo1.png" alt="Client 1" class="w-24 h-24">
-                <img src="client_logo2.png" alt="Client 2" class="w-24 h-24">
-                <img src="client_logo3.png" alt="Client 3" class="w-24 h-24">
-                <!-- Add logos for clients -->
+            <div class="flex items-center justify-center">
+                <!-- Client logos will be dynamically added here -->
             </div>
         </div>
     </section>
@@ -141,7 +138,7 @@
             </form>
         </div>
     </section>
-
+    <script></script>
 </body>
 
 </html>
