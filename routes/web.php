@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\skillsController;
 use App\Http\Controllers\clientsController;
@@ -17,7 +18,10 @@ Route::post('/api/projects', [projectsController::class, 'addproject'])->name('a
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', [DashboardController::class,'index']);
+Route::get('/admin', function() {
+    return view('Admin.admin');
+});
+Route::post('/admin', [adminController::class,'verifyAdmin'])->name('admin.login');
 Route::get('/portfolio', function() {
     return view('portfolio');
 });
