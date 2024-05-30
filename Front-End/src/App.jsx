@@ -13,6 +13,7 @@ import {
   StarsCanvas,
 } from "./components";
 
+
 const App = () => {
   return (
     <BrowserRouter>

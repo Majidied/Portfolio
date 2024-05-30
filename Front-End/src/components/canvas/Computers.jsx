@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./gaming_desktop_pc_blend_file/scene.gltf");
+  const computer = useGLTF("./ninja_brothers_lowpoly/scene.gltf");
 
   return (
     <mesh>

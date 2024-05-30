@@ -5,35 +5,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Haitam Lahlaouti</title>
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Font -->
     <script src="https://kit.fontawesome.com/fa33ea315f.js" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body class="bg-gray-100">
+<body>
 
     <!-- Navigation -->
     <header>
         <nav class="bg-white shadow-lg">
             <div class="container mx-auto px-4">
                 <div class="flex items-center justify-between py-4">
-                    <a href="#" class="text-xl font-bold text-gray-800">My Portfolio</a>
+                    <a href="#" class="text-xl font-bold text-gray-800">LAHLAOUTI HAITAM</a>
                     <ul class="flex space-x-4">
                         <li><a href="#home" class="text-gray-600 hover:text-gray-800">Home</a></li>
                         <li><a href="#skills" class="text-gray-600 hover:text-gray-800">Skills</a></li>
                         <li><a href="#clients" class="text-gray-600 hover:text-gray-800">Clients</a></li>
                         <li><a href="#projects" class="text-gray-600 hover:text-gray-800">Projects</a></li>
                         <li><a href="#contact" class="text-gray-600 hover:text-gray-800">Contact</a></li>
+                        <li>
+                            <span class="nav-link theme_toggle">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
 
     <!-- Home Section -->
     <section id="home" class="py-10">
@@ -125,7 +133,7 @@
             <form method="POST" action="{{route('contacts')}}" id="contact-form" >
                 @csrf
                 <div class="mb-4">
-                    <input type="text" name="name" placeholder="Your Name" class="bg-gray-100 rounded-md px-4 py-2 w-full">
+                    <input type="text" name="name" placeholder="Your Name" class="bg-gray-100 rounded-md px-4 py-2 w-full">  
                 </div>
                 <div class="mb-4">
                     <input type="email" name="email" placeholder="Your Email" class="bg-gray-100 rounded-md px-4 py-2 w-full">
