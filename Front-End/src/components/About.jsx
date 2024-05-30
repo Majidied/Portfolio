@@ -32,7 +32,7 @@ const ServiceCard = ({ index, title, onClick }) => (
 );
 
 const About = () => {
-    const [selectedCategory, setSelectedCategory] = useState("front-end");
+    const [selectedCategory, setSelectedCategory] = useState("Select a category");
 
     return (
         <>
@@ -63,7 +63,6 @@ const About = () => {
                         title={service.title}
                         onClick={() => {
                             setSelectedCategory(service.category)
-                            console.log("selectedCategory: ", selectedCategory)
                         }}
                     />
                 ))}
