@@ -50,79 +50,112 @@ export const navLinks = [
   },
 ];
 
-const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "Graphic Designer",
-    icon: mobile,
-  },
-  {
-    title: "Video Editor",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
-];
+const categories = [
+    {
+      title: "Front-end",
+      category: "Front-end",
+    },
+    {
+      title: "Back-end",
+      category: "Back-end",
+    },
+    {
+      title: "Database",
+      category: "database",
+    },
+    {
+      title: "Tools",
+      category: "tools",
+    },
+  ];
 
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "Firebase",
-    icon: firebase,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "Figma",
-    icon: figma,
-  },
-  {
-    name: "WordPress",
-    icon: wordpress,
-  },
-  {
-    name: "Illustrator",
-    icon: ai,
-  },
-];
+//   const technologies = [
+//     {
+//       name: "HTML 5",
+//       icon: html,
+//       category: "front-end",
+//     },
+//     {
+//       name: "CSS 3",
+//       icon: css,
+//       category: "front-end",
+//     },
+//     {
+//       name: "JavaScript",
+//       icon: javascript,
+//       category: "front-end",
+//     },
+//     {
+//       name: "React JS",
+//       icon: reactjs,
+//       category: "front-end",
+//     },
+//     {
+//       name: "Redux Toolkit",
+//       icon: redux,
+//       category: "front-end",
+//     },
+//     {
+//       name: "Tailwind CSS",
+//       icon: tailwind,
+//       category: "front-end",
+//     },
+//     {
+//       name: "Node JS",
+//       icon: nodejs,
+//       category: "back-end",
+//     },
+//     {
+//       name: "Firebase",
+//       icon: firebase,
+//       category: "database",
+//     },
+//     {
+//       name: "Three JS",
+//       icon: threejs,
+//       category: "front-end",
+//     },
+//     {
+//       name: "git",
+//       icon: git,
+//       category: "tools",
+//     },
+//     {
+//       name: "Figma",
+//       icon: figma,
+//       category: "tools",
+//     },
+//     {
+//       name: "WordPress",
+//       icon: wordpress,
+//       category: "back-end",
+//     },
+//     {
+//       name: "Illustrator",
+//       icon: ai,
+//       category: "tools",
+//     },
+//   ];
+
+//   const fetchTechnologies = () => {
+//     return $.ajax({
+//         url: "http://127.0.0.1:8000/api/skills",
+//         method: "GET",
+//     });
+// };
+
+// const [technologies, setTechnologies] = useState([]);
+
+// useEffect(() => {
+//     fetchTechnologies()
+//         .done((data) => {
+//             setTechnologies(data.technologies);
+//         })
+//         .fail((error) => {
+//             console.error("Error fetching technologies:", error);
+//         });
+// }, []);
+
 
 const experiences = [
   {
@@ -272,4 +305,6 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+
+
+export { categories, experiences, testimonials, projects };

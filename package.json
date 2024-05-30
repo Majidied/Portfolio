@@ -17,6 +17,7 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "react-responsive": "^10.0.0"
         "@react-three/drei": "^9.106.0",
         "@react-three/fiber": "^8.16.6",
         "@types/three": "^0.164.1",

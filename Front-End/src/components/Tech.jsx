@@ -1,22 +1,64 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import { BallCanvas } from "./canvas";
-import { SectionWrapper } from "../hoc";
-import { technologies } from "../constants";
+import $ from "jquery";
 
-const Tech = () => {
-  return (
-    <div className="flex flex-row flex-wrap justify-center gap-10">
-      {technologies.map((technology) => (
-        <div className="w-28 h-28" key={technology.name}>
-          <BallCanvas icon={technology.icon} />
-          <p className="text-center text-secondary text-[14px] mb-12 cursor-default">
-            {technology.name}
-          </p>
+const Tech = ({ selectedCategory }) => {
+    const [technologies, setTechnologies] = useState([]);
+    const [filteredTechnologies, setFilteredTechnologies] = useState([]);
+
+    // Fetch technologies from the API
+    const fetchTechnologies = () => {
+        return $.ajax({
+            url: "http://127.0.0.1:8000/api/skills",
+            method: "GET",
+        });
+    };
+
+    // Fetch technologies on component mount
+    useEffect(() => {
+        fetchTechnologies()
+            .done((data) => {
+                console.log("Fetched technologies:", data);
+                if (data && data.technologies) {
+                    setTechnologies(data.technologies);
+                } else {
+                    console.error("Unexpected data format:", data);
+                }
+            })
+            .fail((error) => {
+                console.error("Error fetching technologies:", error);
+            });
+    }, []);
+
+    // Filter technologies based on selectedCategory
+    useEffect(() => {
+        if (selectedCategory) {
+            const filteredTech = technologies.filter(
+                (tech) => tech.category === selectedCategory
+            );
+            setFilteredTechnologies(filteredTech);
+        } else {
+            setFilteredTechnologies(technologies);
+        }
+    }, [selectedCategory, technologies]);
+
+    // Render the filtered technologies
+    return (
+        <div className="flex flex-row flex-wrap justify-center gap-10">
+            {filteredTechnologies.length > 0 ? (
+                filteredTechnologies.map(({ title, url }, index) => (
+                    <div className="w-28 h-28" key={index}>
+                        <BallCanvas icon={url} />
+                        <p className="text-center text-white text-[14px] mb-12 cursor-default">
+                            {title}
+                        </p>
+                    </div>
+                ))
+            ) : (
+                <p className="text-center text-white">No technologies found.</p>
+            )}
         </div>
-      ))}
-    </div>
-  );
+    );
 };
 
-export default SectionWrapper(Tech, "");
+export default Tech;

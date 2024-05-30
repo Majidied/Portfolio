@@ -14,6 +14,7 @@
     "@react-three/drei": "^9.106.0",
     "@react-three/fiber": "^8.16.6",
     "framer-motion": "^10.12.4",
+    "jquery": "^3.7.1",
     "gsap": "^3.12.5",
     "maath": "^0.5.3",
     "react": "^18.2.0",
