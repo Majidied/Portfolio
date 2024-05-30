@@ -2,24 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\skills;
+use App\Models\Skills;
 use Illuminate\Http\Request;
 
-class skillsController extends Controller
+class SkillsController extends Controller
 {
     public function getSkills()
     {
-        $skills = skills::all();
-        return $skills;
+        // Fetch all skills and return as JSON
+        $skills = Skills::all();
+        return response()->json(['technologies' => $skills]);
     }
 
     public function store(Request $request)
     {
-        $skills = new skills();
+        $skills = new Skills();
         $skills->title = $request->title;
         $skills->url = $request->url;
         $skills->category = $request->category;
         $skills->save();
-        return redirect()->back()->with("success","Skill saved successfully");
+        return redirect()->back()->with("success", "Skill saved successfully");
     }
 }
