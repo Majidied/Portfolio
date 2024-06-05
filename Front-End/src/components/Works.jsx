@@ -1,18 +1,76 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
+import $ from "jquery";
 
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
+const Works = () => {
+  const [projects, setProjects] = useState([]);
+
+  // Fetch projects from the API
+  const fetchProjects = () => {
+    return $.ajax({
+      url: "http://127.0.0.1:8000/api/projects",
+      method: "GET",
+    });
+  };
+
+  // Fetch projects on component mount
+  useEffect(() => {
+    fetchProjects()
+      .done((data) => {
+        console.log("Fetched projects:", data);
+        if (data && data.length > 0) {
+          setProjects(data);
+        } else {
+          console.error("Unexpected data format:", data);
+        }
+      })
+      .fail((error) => {
+        console.error("Error fetching projects:", error);
+      });
+  }, []);
+
+  return (
+    <>
+      <motion.div variants={textVariant()}>
+        <p className={`${styles.sectionSubText} cursor-default`}>My work</p>
+        <h2 className={`${styles.sectionHeadText} cursor-default`}>
+          Projects.
+        </h2>
+      </motion.div>
+
+      <div className="w-full flex">
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        >
+          Following projects showcase my skills and experience through
+          real-world examples of my work. Each project is briefly described with
+          links to Github repositories and live demos. It reflects my
+          ability to solve complex problems, work with different technologies,
+          and manage projects effectively.
+        </motion.p>
+      </div>
+
+      <div className="mt-20 flex flex-wrap gap-7">
+        {projects.length > 0 ? (
+          projects.map((project, index) => (
+            <ProjectCard key={`project-${index}`} index={index} {...project} />
+          ))
+        ) : (
+          <p className="text-center text-white">No projects found.</p>
+        )}
+      </div>
+    </>
+  );
 const ProjectCard = ({
-  index,
-  name,
+    title,
   description,
-  tags,
   image,
   source_code_link,
   link,
@@ -78,36 +136,6 @@ const ProjectCard = ({
   );
 };
 
-const Works = () => {
-  return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} cursor-default`}>My work</p>
-        <h2 className={`${styles.sectionHeadText} cursor-default`}>
-          Projects.
-        </h2>
-      </motion.div>
-
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
-        >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to Github repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
-        </motion.p>
-      </div>
-
-      <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
-      </div>
-    </>
-  );
 };
 
-export default SectionWrapper(Works, "");
+export default Works;
