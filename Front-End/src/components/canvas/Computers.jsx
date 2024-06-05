@@ -1,17 +1,12 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import { useMediaQuery } from 'react-responsive';
-
-
-import CanvasLoader from "../Loader";
+import React from "react";
+import { useGLTF } from "@react-three/drei";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./ninja_brothers_lowpoly/scene.gltf");
+  const { scene } = useGLTF("robot_playground.glb");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.20} groundColor="black" />
+      <hemisphereLight intensity={0.2} groundColor="black" />
       <spotLight
         position={[-10, 50, 10]}
         angle={0.12}
@@ -22,7 +17,7 @@ const Computers = ({ isMobile }) => {
       />
       <pointLight intensity={1} />
       <primitive
-        object={computer.scene}
+        object={scene}
         scale={isMobile ? 0.4 : 1}
         position={isMobile ? [0, -3, 1] : [0, -3.25, 0]}
         rotation={[-0.01, 0.5, -0.1]}
@@ -31,31 +26,4 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-const ComputersCanvas = () => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-
-
-  return (
-    <Canvas
-      frameloop="demand"
-      shadows
-      dpr={[0.8, 2]}
-      camera={{ position: [20, 3, 10], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-      style={isMobile ? {marginLeft: "0px"} : { width: "calc(100% - 200px)", marginLeft: "250px", paddingBottom: "100px" }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} />
-      </Suspense>
-
-      <Preload all />
-    </Canvas>
-  );
-};
-
-export default ComputersCanvas;
+export default Computers;
