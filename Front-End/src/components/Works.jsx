@@ -24,8 +24,8 @@ const Works = () => {
     fetchProjects()
       .done((data) => {
         console.log("Fetched projects:", data);
-        if (data && data.length > 0) {
-          setProjects(data);
+        if (data && data.projects) {
+          setProjects(data.projects);
         } else {
           console.error("Unexpected data format:", data);
         }
@@ -34,6 +34,7 @@ const Works = () => {
         console.error("Error fetching projects:", error);
       });
   }, []);
+
 
   return (
     <>
@@ -60,20 +61,22 @@ const Works = () => {
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.length > 0 ? (
           projects.map((project, index) => (
-            <ProjectCard key={`project-${index}`} index={index} {...project} />
-          ))
+            <div key={`project-${index}`}>
+            <ProjectCard title={project.title} description={project.description} image={project.image} source_code_link={project.source_code_link} />
+          </div>))
         ) : (
           <p className="text-center text-white">No projects found.</p>
         )}
       </div>
     </>
-  );
+  );};
 const ProjectCard = ({
+    index,
     title,
   description,
   image,
   source_code_link,
-  link,
+  tags = [],
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -107,24 +110,14 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <h3 className="text-white font-bold text-[24px]">{title}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
-        </div>
-
-        <div className="mt-4">
-          <a
-            className="bg-[#804dee] hover:bg-transparent hover:border-[2px] hover:border-[#804dee] rounded-md w-fit flex justify-center items-center hover:text-[#804dee] px-4 py-2"
-            href={link}
-            target="blank"
-          >
-            Live
-          </a>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <p
-              key={`${name}-${tag.name}`}
+              key={`${title}-${tag.name}`}
               className={`text-[14px] ${tag.color}`}
             >
               #{tag.name}
@@ -136,6 +129,6 @@ const ProjectCard = ({
   );
 };
 
-};
+
 
 export default Works;
