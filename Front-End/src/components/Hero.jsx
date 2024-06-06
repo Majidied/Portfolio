@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { useMediaQuery } from 'react-responsive';
+import { fadeIn, textVariant } from "../utils/motion";
+
 
 
 import { styles } from "../styles";
@@ -32,7 +34,8 @@ const Hero = () => {
 
   return (
     <section className={`relative w-full h-screen mx-auto ${isMobile ? 'flex flex-col' : ''}`}>
-      <div
+      <motion.div
+      variants={textVariant()}
         className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
@@ -57,27 +60,11 @@ const Hero = () => {
             *Touch the computer to rotate...
           </p>
         </div>
-      </div>
+      </motion.div>
 
 
 
-      <div className="absolute xs:bottom-16 bottom-0 w-full hidden sm:flex justify-center items-center">
-        <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-slate-900 flex justify-center items-start p-1">
-            <motion.div
-              animate={{
-                y: [0, 32, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-4 h-4 rounded-full bg-[#915EFF]"
-            />
-          </div>
-        </a>
-      </div>
+
     </section>
   );
 };
