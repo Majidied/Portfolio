@@ -43,7 +43,7 @@ const About = () => {
                     Introduction
                 </p>
                 <h2 className={`${styles.sectionHeadText} cursor-default`}>
-                    About me.
+                    About us.
                 </h2>
             </motion.div>
 
@@ -51,10 +51,16 @@ const About = () => {
                 variants={fadeIn("", "", 0.1, 1)}
                 className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
             >
-                I'm a full-stack developer with experience in JavaScript, and expertise
-                in frameworks like React, Node.js, and Three.js. I'm a quick learner and
-                collaborate closely with clients to create efficient and user-friendly
-                solutions. I really appreciate your immediate attention to this matter!
+                Mohammed Majidi and Haitam Lahlaouti are aspiring software engineers
+                with a passion for learning and mastering various programming languages
+                and frameworks. Mohammed completed the ALX Software Engineer program,
+                excelling in C and Python, while Haitam was admitted to level 08 at
+                École 1337, where he currently studies. Both have a strong educational
+                 background in engineering and mathematics, with proficiency in
+                 languages like C++, Python, Java, and technologies such as Laravel,
+                 React, and Spring Boot. Their project experience showcases their
+                 ability to apply their skills effectively in real-world scenarios,
+                 making them valuable assets in the field of software development.
             </motion.p>
 
             <div className="mt-20 flex flex-wrap gap-10">
