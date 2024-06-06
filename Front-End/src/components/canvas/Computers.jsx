@@ -1,8 +1,8 @@
 import React, { Suspense, useEffect, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF, useAnimations } from "@react-three/drei";
 import { useMediaQuery } from 'react-responsive';
-
+import * as THREE from 'three'; // Import THREE.js
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
@@ -11,9 +11,10 @@ const Computers = ({ isMobile }) => {
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
-    if (actions) {
-      Object.values(actions).forEach((action) => action.play());
-    }
+      Object.values(actions).forEach((action) => {
+        action.setLoop(THREE.LoopRepeat, Infinity);
+        action.play();
+      });
   }, [actions]);
 
   return (
@@ -56,8 +57,8 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-<Computers isMobile={isMobile} />
-</Suspense>
+        <Computers isMobile={isMobile} />
+      </Suspense>
       <Preload all />
     </Canvas>
   );

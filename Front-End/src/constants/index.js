@@ -1,3 +1,4 @@
+import { i } from "maath/dist/index-43782085.esm";
 import {
   mobile,
   backend,
@@ -28,6 +29,11 @@ import {
   tiktok,
 } from "../assets";
 
+import front from "../assets/front.png";
+import back from "../assets/back.png";
+import database from "../assets/database.png";
+import tools from "../assets/tools.png";
+
 import avt1 from "../assets/avatar1.jpg";
 import avt2 from "../assets/avatar2.jpg";
 import avt3 from "../assets/avatar3.jfif";
@@ -53,19 +59,23 @@ export const navLinks = [
 const categories = [
     {
       title: "Front-end",
+      icon: front,
       category: "Front-end",
     },
     {
       title: "Back-end",
+      icon: back,
       category: "Back-end",
     },
     {
       title: "Database",
-      category: "database",
+      icon: database,
+      category: "Database",
     },
     {
       title: "Tools",
-      category: "tools",
+      icon: tools,
+      category: "Tools",
     },
   ];
 
@@ -287,7 +297,7 @@ const experiences = [
       ],
     },
   ];
-  
+
 
 
   const testimonials = [
@@ -340,7 +350,7 @@ const experiences = [
       image: "path_to_image",
     },
   ];
-  
+
 
 const projects = [
   {
