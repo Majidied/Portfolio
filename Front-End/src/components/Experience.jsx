@@ -14,6 +14,7 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
+
 const ExperienceCard = ({ experience }) => {
     return (
         <VerticalTimelineElement
@@ -74,11 +75,11 @@ const Experience = () => {
     return (
         <>
             <motion.div variants={textVariant} style={{ zIndex: 40 }}>
-                <p className={`${styles.sectionHeadText} text-white  cursor-default`}>
-                    What can I offer
+                <p className={`${styles.sectionSubText} text-white  cursor-default`}>
+                    Our Experiences
                 </p>
-                <h2 className={`${styles.sectionHeadText}  cursor-default`}>
-                    My service.
+                <h2 className={`${styles.sectionHeadText} cursor-default`}>
+                    Experiences.
                 </h2>
             </motion.div>
 
