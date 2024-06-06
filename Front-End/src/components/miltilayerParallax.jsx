@@ -44,6 +44,23 @@ export default function MultiLayerParallax() {
       <div className="absolute w-full sm:w-[70%] h-screen sm:right-[5%] z-30">
         <ComputersCanvas />
       </div>
+      <div className="absolute xs:bottom-16 bottom-0 w-full hidden sm:flex justify-center items-center z-40">
+        <a href="#about">
+          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-slate-900 flex justify-center items-start p-1">
+            <motion.div
+              animate={{
+                y: [0, 32, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="w-4 h-4 rounded-full bg-[#915EFF]"
+            />
+          </div>
+        </a>
+      </div>
     </div>
   );
 }

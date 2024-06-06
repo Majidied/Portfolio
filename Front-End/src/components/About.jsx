@@ -48,18 +48,18 @@ const About = () => {
 
             <motion.p
                 variants={fadeIn("", "", 0.1, 1)}
-                className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+                className="mt-4 text-gray-400 text-[17px] max-w-3xl leading-[30px]"
             >
                 Mohammed Majidi and Haitam Lahlaouti are aspiring software engineers
                 with a passion for learning and mastering various programming languages
                 and frameworks. Mohammed completed the ALX Software Engineer program,
                 excelling in C and Python, while Haitam was admitted to level 08 at
                 École 1337, where he currently studies. Both have a strong educational
-                 background in engineering and mathematics, with proficiency in
-                 languages like C++, Python, Java, and technologies such as Laravel,
-                 React, and Spring Boot. Their project experience showcases their
-                 ability to apply their skills effectively in real-world scenarios,
-                 making them valuable assets in the field of software development.
+                background in engineering and mathematics, with proficiency in
+                languages like C++, Python, Java, and technologies such as Laravel,
+                React, and Spring Boot. Their project experience showcases their
+                ability to apply their skills effectively in real-world scenarios,
+                making them valuable assets in the field of software development.
             </motion.p>
 
             <div className="mt-20 flex flex-wrap gap-10">
@@ -76,12 +76,13 @@ const About = () => {
                 ))}
             </div>
             <br />
-            <motion.div className="w-full h-full bg-gray-900 rounded-lg shadow-lg p-6"
-            variants={fadeIn("", "", 0.1, 1)}
+            <motion.div className="w-full h-full bg-gradient-to-b from-gray-800 to-stone-800 rounded-lg shadow-lg p-6"
+                variants={fadeIn("", "", 0.1, 1)}
             >
                 <h1 className="mt-10 text-2xl font-bold z-10">{selectedCategory}</h1>
                 <Tech key={selectedCategory} selectedCategory={selectedCategory} />
             </motion.div>
+
 
         </>
     );
