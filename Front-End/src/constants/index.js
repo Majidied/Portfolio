@@ -158,83 +158,189 @@ const categories = [
 
 
 const experiences = [
-  {
-    title: "Web Application Develop",
-    company_name: "React",
-    icon: vsc,
-    iconBg: "#383E56",
-    date: "2021 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "UI/UX Design",
-    company_name: "Figma",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "2021 - Present",
-    points: [
-      "Design & organized web applications features using Figma and other related technologies.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Translate designs to code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Graphic Illustration Design",
-    company_name: "Adobe Creative Cloud",
-    icon: cc,
-    iconBg: "#E6DEDD",
-    date: "2018 - Present",
-    points: [
-      "Create modern attractive template for website.",
-      "Design logo, banners, posters, thumbnails, brand awareness, and everything matched your requirements.",
-      "Publications such as pakages, clothes, brochures, etc .",
-      "Material, flat, minimalism, abstract design.",
-    ],
-  },
-  {
-    title: "Video & Content Edit",
-    company_name: "Youtube & Tiktok",
-    icon: tiktok,
-    iconBg: "#E6DEDD",
-    date: "2015 - Present",
-    points: [
-      "Content edit & management, suitable for any platform.",
-      "Create intro & outro perfectly fit your profile.",
-      "2D & 3D transition, stunning effects.",
-    ],
-  },
-];
+    {
+      title: "Portfolio",
+      company_name: "École Nationale des Sciences Appliquées Khouribga",
+      location: "Khouribga",
+      date: "2024",
+      iconBg: "#383E56",
+      points: [
+        "Réalisé en HTML, CSS, PHP avec Laravel, React, et Three.js.",
+      ],
+    },
+    {
+      title: "Application dédiée au don de sang",
+      company_name: "Club Jeunes Leaders Marocains ENSA Khouribga",
+      location: "Khouribga",
+      date: "2024",
+      iconBg: "#383E56",
+      points: [
+        "Réalisé en Angular, Spring Boot, Java.",
+      ],
+    },
+    {
+      title: "Gestion des projets académiques pour les enseignants",
+      company_name: "École Nationale des Sciences Appliquées Khouribga",
+      location: "Khouribga",
+      date: "2024",
+      iconBg: "#383E56",
+      points: [
+        "Réalisé en Java et JavaFX.",
+      ],
+    },
+    {
+      title: "Projet de prédictions de prix de voitures",
+      company_name: "École Nationale des Sciences Appliquées Khouribga",
+      location: "Khouribga",
+      date: "2023",
+      iconBg: "#383E56",
+      points: [
+        "Réalisé en PYTHON.",
+      ],
+    },
+    {
+      title: "Projet de Gestion Bancaire Avancée",
+      company_name: "École Nationale des Sciences Appliquées Khouribga",
+      location: "Khouribga",
+      date: "2023",
+      iconBg: "#383E56",
+      points: [
+        "Réalisé en C++.",
+      ],
+    },
+    {
+      title: "Projet de Gestion de Centre de Soutien, Langue et Formation",
+      company_name: "École Nationale des Sciences Appliquées Khouribga",
+      location: "Khouribga",
+      date: "2023",
+      iconBg: "#383E56",
+      points: [
+        "Réalisé avec MERISE, SQL, PHP, JavaScript, HTML et CSS.",
+      ],
+    },
+    {
+      title: "Études en Génie Informatique",
+      company_name: "École Nationale des Sciences Appliquées Khouribga",
+      date: "2023 - présent",
+      iconBg: "#383E56",
+      points: [
+        "Apprentissage de Merise, SQL, C++, PYTHON, Algorithmes avancés.",
+        "Programmation Assembleur, JAVA et JavaFX/Swing.",
+        "Programmation web : HTML, CSS, PHP, JS.",
+        "Systèmes d'exploitation : Linux/Unix, programmation Shell.",
+        "Conception logicielle : MVC, Réseaux et protocoles, Analyse de données.",
+      ],
+    },
+    {
+      title: "Programme ALX Software Engineer",
+      person: "Mohammed Majidi",
+      date: "2022 - 2023",
+      iconBg: "#383E56",
+      points: [
+        "Apprentissage approfondi des langages de programmation C et Python.",
+        "Réalisation de plusieurs projets inclus dans le programme.",
+      ],
+    },
+    {
+      title: "École 1337",
+      person: "Haitam Lahlaouti",
+      status: "Admis au level 08, devenu student",
+      date: "2022 - 2023",
+      iconBg: "#383E56",
+      points: [
+        "Apprentissage approfondi des langages de programmation C et Python.",
+        "Réalisation de plusieurs projets inclus dans le programme.",
+      ],
+    },
+    {
+      title: "Prépa intégrée",
+      company_name: "École Nationale des Sciences Appliquées Khouribga",
+      location: "Khouribga",
+      date: "2021 - 2023",
+      iconBg: "#383E56",
+      points: [
+        "Étude de l'algorithmique et des langages de programmation C et Python.",
+        "Réalisation de projets de gestion de bibliothèque, gestion des billets d'aéroport, gestion de réservation des bus, et de location de voitures en C.",
+        "Projet de traitement d'image en Python en groupe.",
+      ],
+    },
+    {
+      title: "Baccalauréat - Sciences Mathématiques B",
+      person: "Mohammed Majidi",
+      company_name: "Abdellahgunoun",
+      location: "Bejaad",
+      date: "2020 - 2021",
+      iconBg: "#383E56",
+      points: [
+        "Étude des Sciences Mathématiques B.",
+      ],
+    },
+    {
+      title: "Baccalauréat - Sciences Mathématiques B",
+      person: "Haitam Lahlaouti",
+      company_name: "Groupe Scolaire Tazi 2",
+      location: "Casablanca",
+      date: "2020 - 2021",
+      iconBg: "#383E56",
+      points: [
+        "Étude des Sciences Mathématiques B.",
+      ],
+    },
+  ];
+  
 
-const testimonials = [
-  {
-    testimonial:
-      "Professional design, clean and good-looking. Hope for the next co-opporation.",
-    name: "Son Anh Nguyen",
-    designation: "CFO",
-    company: "HA Smart",
-    image: avt1,
-  },
-  {
-    testimonial:
-      "Awesome works, really cute and modern design! A little bit in a nick of time but the result still worthy.",
-    name: "Huyen Trang Nguyen",
-    designation: "COO",
-    company: "DEF Corp",
-    image: avt2,
-  },
-  {
-    testimonial: "Great job! Very nice design, simple but effective.",
-    name: "Ly Nguyen",
-    designation: "CTO",
-    company: "Sunhouse Co., LTD",
-    image: avt3,
-  },
-];
+
+  const testimonials = [
+    {
+      testimonial:
+        "Le projet de gestion de centre de soutien, langue et formation a grandement amélioré notre organisation interne. L'équipe a su répondre à nos attentes avec des solutions innovantes.",
+      name: "Yassir Rochd",
+      designation: "Professeur Enseignement Supérieur",
+      company: "École Nationale des Sciences Appliquées Khouribga",
+      image: "path_to_image",
+    },
+    {
+      testimonial:
+        "L'application dédiée au don de sang a été une véritable révolution pour notre club. La qualité du code et la rapidité de l'exécution étaient exceptionnelles.",
+      name: "Association Ataa",
+      designation: "Association",
+      company: "Club Jeunes Leaders Marocains ENSA Khouribga",
+      image: "path_to_image",
+    },
+    // {
+    //   testimonial:
+    //     "Les compétences en développement web démontrées dans la réalisation du portfolio sont impressionnantes. Le site est à la fois moderne et fonctionnel.",
+    //   name: "",
+    //   designation: "Professeur Enseignement Supérieur",
+    //   company: "École Nationale des Sciences Appliquées Khouribga",
+    //   image: "path_to_image",
+    // },
+    {
+      testimonial:
+        "Le projet de prédiction des prix de voitures a apporté une nouvelle perspective à notre recherche en intelligence artificielle. Travail remarquable !",
+      name: "Fatima Zohra Ennaji",
+      designation: "Professeur Assistant à l'ENSA Khouribga",
+      company: "École Nationale des Sciences Appliquées Khouribga",
+      image: "path_to_image",
+    },
+    {
+      testimonial:
+        "La gestion des projets académiques pour les enseignants a considérablement facilité notre travail quotidien. Une réalisation exemplaire.",
+      name: "Imad HAFIDI",
+      designation: "Professeur de l'Enseignement Supérieur",
+      company: "École Nationale des Sciences Appliquées Khouribga",
+      image: "path_to_image",
+    },
+    {
+      testimonial:
+        "Le projet de gestion bancaire avancée a été un défi relevé avec brio. L'application est robuste et efficace.",
+        name: "Fatima Zohra Ennaji",
+        designation: "Professeur Assistant à l'ENSA Khouribga",
+      company: "École Nationale des Sciences Appliquées Khouribga",
+      image: "path_to_image",
+    },
+  ];
+  
 
 const projects = [
   {

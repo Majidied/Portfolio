@@ -35,11 +35,12 @@ const Works = () => {
       });
   }, []);
 
+
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} cursor-default`}>My work</p>
-        <h2 className={`${styles.sectionHeadText} cursor-default`}>
+        <p className={`ml-5 ${styles.sectionSubText} cursor-default`}>My work</p>
+        <h2 className={`ml-5 ${styles.sectionHeadText} cursor-default`}>
           Projects.
         </h2>
       </motion.div>
@@ -47,7 +48,7 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 ml-5 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           Following projects showcase my skills and experience through
           real-world examples of my work. Each project is briefly described with
@@ -57,22 +58,21 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 ml-10 flex flex-wrap gap-7">
         {projects.length > 0 ? (
           projects.map((project, index) => (
-            <ProjectCard key={`project-${index}`} index={index} {...project} />
-          ))
+            <div key={`project-${index}`}>
+            <ProjectCard title={project.title} description={project.description} image={project.image} source_code_link={project.source_code_link} />
+          </div>))
         ) : (
           <p className="text-center text-white">No projects found.</p>
         )}
       </div>
     </>
-  );
-};
-
+  );};
 const ProjectCard = ({
-  index,
-  title,
+    index,
+    title,
   description,
   image,
   source_code_link,
@@ -114,16 +114,6 @@ const ProjectCard = ({
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
-        <div className="mt-4">
-          <a
-            className="bg-[#804dee] hover:bg-transparent hover:border-[2px] hover:border-[#804dee] rounded-md w-fit flex justify-center items-center hover:text-[#804dee] px-4 py-2"
-            href={source_code_link}
-            target="blank"
-          >
-            Live
-          </a>
-        </div>
-
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <p
@@ -138,5 +128,7 @@ const ProjectCard = ({
     </motion.div>
   );
 };
+
+
 
 export default Works;

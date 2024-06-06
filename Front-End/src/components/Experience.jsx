@@ -15,7 +15,11 @@ import { textVariant } from "../utils/motion";
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
-      contentStyle={{ background: "#1d1836" }}
+      contentStyle={{ 
+        background: "#1d1836" ,
+        animation: "fade-in 0.5s ease-in-out",
+        transition: "background 0.5s ease-in-out",
+      }}
       contentArrowStyle={{ borderRight: "7px solid  #000" }}
       date={
         <div className="cursor-default text-slate-900">{experience.date}</div>
@@ -41,7 +45,14 @@ const ExperienceCard = ({ experience }) => {
         >
           {experience.company_name}
         </p>
+        <p
+          className="text-gray-400 text-[10px] font-semibold cursor-default"
+          style={{ margin: 0 }}
+        >
+          {experience.person}
+        </p>
       </div>
+
 
       <ul className="mt-5 list-disc ml-5 space-y-2">
         {experience.points.map((point, index) => (

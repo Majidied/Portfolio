@@ -1,16 +1,23 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import React, { Suspense, useEffect, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF, useAnimations } from "@react-three/drei";
 import { useMediaQuery } from 'react-responsive';
-
 
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./ninja_brothers_lowpoly/scene.gltf");
+  const group = useRef();
+  const { scene, animations } = useGLTF("./robot_playground.glb");
+  const { actions } = useAnimations(animations, group);
+
+  useEffect(() => {
+    if (actions) {
+      Object.values(actions).forEach((action) => action.play());
+    }
+  }, [actions]);
 
   return (
-    <mesh>
+    <group ref={group}>
       <hemisphereLight intensity={0.20} groundColor="black" />
       <spotLight
         position={[-10, 50, 10]}
@@ -22,18 +29,17 @@ const Computers = ({ isMobile }) => {
       />
       <pointLight intensity={1} />
       <primitive
-        object={computer.scene}
-        scale={isMobile ? 0.4 : 1}
+        object={scene}
+        scale={isMobile ? 0.4 : 2}
         position={isMobile ? [0, -3, 1] : [0, -3.25, 0]}
         rotation={[-0.01, 0.5, -0.1]}
       />
-    </mesh>
+    </group>
   );
 };
 
 const ComputersCanvas = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
-
 
   return (
     <Canvas
@@ -42,7 +48,7 @@ const ComputersCanvas = () => {
       dpr={[0.8, 2]}
       camera={{ position: [20, 3, 10], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
-      style={isMobile ? {marginLeft: "0px"} : { width: "calc(100% - 200px)", marginLeft: "250px", paddingBottom: "100px" }}
+      style={isMobile ? { marginLeft: "0px" } : { width: "calc(100% - 200px)", marginLeft: "250px", paddingBottom: "100px" }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -50,9 +56,8 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} />
-      </Suspense>
-
+<Computers isMobile={isMobile} />
+</Suspense>
       <Preload all />
     </Canvas>
   );
