@@ -22,18 +22,18 @@ const App = () => {
             <div className="relative z-0 w-full">
                 <MultiLayerParallax />
                 <div className="relative bg-no-repeat bg-center">
-                        <Navbar />
-                        <About />
-                        <Experience />
-                        <Works />
-                        <Feedbacks />
-                        <div className="relative z-0 bg-[#050816]">
-                            <Contact />
-                            <Footer />
-                            <StarsCanvas />
-                        </div>
+                    <Navbar />
+                    <About />
+                    <Experience />
+                    <Works />
+                    <Feedbacks />
+                    <div className="relative z-0 bg-[#050816]">
+                        <Contact />
+                        <Footer />
+                        <StarsCanvas />
                     </div>
                 </div>
+            </div>
         </BrowserRouter>
     );
 };
