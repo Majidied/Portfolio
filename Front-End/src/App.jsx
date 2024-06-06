@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import MultiLayerParallax from "./components/miltilayerParallax";
 
 import {
     About,
@@ -18,10 +19,10 @@ import {
 const App = () => {
     return (
         <BrowserRouter>
-            <div className="relative z-0 bg-violet-800 w-full">
+            <div className="relative z-0 w-full">
+                <MultiLayerParallax />
                 <div className="relative bg-no-repeat bg-center">
                         <Navbar />
-                        <Hero />
                         <About />
                         <Experience />
                         <Works />
