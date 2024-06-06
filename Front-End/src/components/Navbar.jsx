@@ -25,11 +25,10 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-12 h-12 object-contain" />
           <p className="text-[#915EFF] text-xl sm:text-base font-bold flex cursor-pointer">
-            zeph1697 &nbsp;
+            Lahlaouti Haitam and Majidi Mohammed &nbsp;
             <span className="sm:block hidden text-slate-800">
-              Front-end Developer
+            Aspiring Software Engineers
             </span>
           </p>
         </Link>
