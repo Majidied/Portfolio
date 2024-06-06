@@ -29,7 +29,7 @@ const FeedbackCard = ({
             <span className="blue-text-gradient">@</span> {name}
           </p>
           <p className="mt-1 text-secondary text-[12px]">
-            {designation} of {company}
+            {designation}. {company}
           </p>
         </div>
 
@@ -43,9 +43,14 @@ const FeedbackCard = ({
   </motion.div>
 );
 
+const customStyles = {
+    maxWidth: "800px",
+    margin: "0 auto",
+  };
+
 const Feedbacks = () => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
+    <div className="mt-12 bg-black-100 rounded-[20px]" style={customStyles}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
