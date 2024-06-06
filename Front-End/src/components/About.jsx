@@ -76,10 +76,10 @@ const About = () => {
                 ))}
             </div>
             <br />
-            <motion.div className="w-full h-full bg-gradient-to-b from-gray-800 to-stone-800 rounded-lg shadow-lg p-6"
+            <motion.div className="w-full h-full bg-gradient-to-b from-gray-100 to-stone-100 rounded-lg shadow-lg p-6"
                 variants={fadeIn("", "", 0.1, 1)}
             >
-                <h1 className="mt-10 text-2xl font-bold z-10">{selectedCategory}</h1>
+                <h1 className="mt-10 text-2xl font-bold z-10 text-blue-900">{selectedCategory}</h1>
                 <Tech key={selectedCategory} selectedCategory={selectedCategory} />
             </motion.div>
 

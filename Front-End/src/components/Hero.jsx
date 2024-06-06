@@ -52,7 +52,7 @@ const Hero = () => {
             <span className="bg-gradient-to-r from-blue-300 via-gray-400 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent mt-4">
               <span className="text-purple-400">We are </span> {displayText}
             </span>
-            <p className="text-lg lg:text-xl text-neutral-300 mt-2">
+            <p className="text-lg lg:text-xl font-semibold font-serif italic text-neutral-800 mt-2">
               with a passion for creating beautiful and functional websites. <br /> We have experience in both front-end and back-end development, <br /> and We am always looking for new challenges to help me grow as a developer.
             </p>
           </div>
