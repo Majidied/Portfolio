@@ -4,11 +4,10 @@ import { useMediaQuery } from 'react-responsive';
 
 
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  const toRotate = ['Full stack developer', 'Software engineer', 'Desktop app developer', 'Computer science enthusiast'];
+  const toRotate = ['Full stack developers', 'Software engineers', 'Desktop app developers', 'Computer science enthusiasts'];
 
   const [textIndex, setTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
@@ -46,12 +45,12 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText}`}>
             Hi, We are <span className="text-[#915EFF]">BinaryBros</span>
           </h1>
-            <h1 className="text-4xl lg:text-5xl font-bold text-neutral-100">Welcome To My <span className="text-cyan-500">Portfolio</span></h1>
+            <h1 className="text-4xl lg:text-5xl font-bold text-neutral-100">Welcome To our <span className="text-cyan-500">Portfolio</span></h1>
             <span className="bg-gradient-to-r from-blue-300 via-gray-400 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent mt-4">
-              <span className="text-purple-400">I&apos;m a </span> {displayText}
+              <span className="text-purple-400">We are </span> {displayText}
             </span>
             <p className="text-lg lg:text-xl text-neutral-300 mt-2">
-              with a passion for creating beautiful and functional websites. <br /> I have experience in both front-end and back-end development, <br /> and I am always looking for new challenges to help me grow as a developer.
+              with a passion for creating beautiful and functional websites. <br /> We have experience in both front-end and back-end development, <br /> and We am always looking for new challenges to help me grow as a developer.
             </p>
           </div>
           <p className="absolute bottom-8 text-secondary">
@@ -60,9 +59,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute w-full sm:w-[70%] h-screen sm:right-[5%]">
-        <ComputersCanvas />
-      </div>
+
 
       <div className="absolute xs:bottom-16 bottom-0 w-full hidden sm:flex justify-center items-center">
         <a href="#about">
