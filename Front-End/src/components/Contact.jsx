@@ -37,9 +37,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "mohammed majidi",
+          to_name: "mohammed majidi, lahlaouti haitam",
           from_email: form.email,
-          to_email: "majidimajidi2003@gmail.com",
+          to_email: "majidimajidi2003@gmail.com, lahlaoutihaitam01@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -47,7 +47,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          alert("Thank you. We will get back to you as soon as possible.");
 
           setForm({
             name: "",
