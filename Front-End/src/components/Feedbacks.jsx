@@ -50,7 +50,7 @@ const customStyles = {
 
 const Feedbacks = () => {
   return (
-    <div className="mt-12 bg-black-100 rounded-[20px]" style={customStyles}>
+    <div className="mt-12 bg-white-100 rounded-[20px]" style={customStyles}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
