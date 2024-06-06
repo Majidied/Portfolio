@@ -19,7 +19,7 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText}`}>
-            Hi, I'm <span className="text-[#915EFF]">zeph1697</span>
+            Hi, We are <span className="text-[#915EFF]">BinaryBros</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-slate-900`}>
             I build clean & pixel-perfect website <br /> And 3D website also, if
