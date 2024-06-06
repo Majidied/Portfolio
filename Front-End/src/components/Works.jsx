@@ -24,8 +24,8 @@ const Works = () => {
     fetchProjects()
       .done((data) => {
         console.log("Fetched projects:", data);
-        if (data && data.length > 0) {
-          setProjects(data);
+        if (data && data.projects) {
+          setProjects(data.projects);
         } else {
           console.error("Unexpected data format:", data);
         }
@@ -68,12 +68,15 @@ const Works = () => {
       </div>
     </>
   );
+};
+
 const ProjectCard = ({
-    title,
+  index,
+  title,
   description,
   image,
   source_code_link,
-  link,
+  tags = [],
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -107,14 +110,14 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <h3 className="text-white font-bold text-[24px]">{title}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
         <div className="mt-4">
           <a
             className="bg-[#804dee] hover:bg-transparent hover:border-[2px] hover:border-[#804dee] rounded-md w-fit flex justify-center items-center hover:text-[#804dee] px-4 py-2"
-            href={link}
+            href={source_code_link}
             target="blank"
           >
             Live
@@ -124,7 +127,7 @@ const ProjectCard = ({
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <p
-              key={`${name}-${tag.name}`}
+              key={`${title}-${tag.name}`}
               className={`text-[14px] ${tag.color}`}
             >
               #{tag.name}
@@ -134,8 +137,6 @@ const ProjectCard = ({
       </Tilt>
     </motion.div>
   );
-};
-
 };
 
 export default Works;
