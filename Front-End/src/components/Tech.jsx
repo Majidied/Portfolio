@@ -49,13 +49,13 @@ const Tech = ({ selectedCategory }) => {
                 filteredTechnologies.map(({ title, url }, index) => (
                     <div className="w-28 h-28" key={index}>
                         <BallCanvas icon={url} />
-                        <p className="text-center text-white text-[14px] mb-12 cursor-default">
+                        <p className="text-center text-blue-900 text-[14px] mb-12 cursor-default">
                             {title}
                         </p>
                     </div>
                 ))
             ) : (
-                <p className="text-center text-white">No technologies found.</p>
+                <p className="text-center text-blue-900">No technologies found.</p>
             )}
         </div>
     );
