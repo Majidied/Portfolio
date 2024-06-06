@@ -27,4 +27,5 @@ Route::get('/portfolio', function() {
     return view('portfolio');
 });
 
-Route::get('/deletSkill', [skillsController::class,'deleteLastRecord'])->name('delete-skill');
+Route::get('/deleteSkill', [skillsController::class,'deleteLastRecord'])->name('delete-skill');
+Route::get('/deleteProject', [projectsController::class,'deleteLastRecord'])->name('delete-project');

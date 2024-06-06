@@ -104,6 +104,10 @@
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Add
                             Project</button>
+                            <button>
+                                <a href="{{ route('delete-project') }}"
+                                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded">Delete Last Skill</a>
+                            </button>
 
                     </form>
                 </section>

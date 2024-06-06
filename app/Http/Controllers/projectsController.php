@@ -26,4 +26,10 @@ class projectsController extends Controller
         $project->save();
         return redirect()->back()->with('success', 'Project added successfully!');
     }
+
+    public function deleteLastRecord() {
+        $clients = projects::latest()->first();
+        $clients->delete();
+        return redirect()->back()->with("success","Client deleted successfully");
+    }
 }

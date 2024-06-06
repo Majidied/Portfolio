@@ -40,13 +40,13 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`ml-5 ${styles.sectionSubText} cursor-default`}>My work</p>
+        <p className={`ml-5 ${styles.sectionSubText} cursor-default`}>Our work</p>
         <h2 className={`ml-5 ${styles.sectionHeadText} cursor-default`}>
           Projects.
         </h2>
       </motion.div>
 
-      <div className="w-full flex">
+      <div className="w-full flex" variants={textVariant()}>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 ml-5 text-secondary text-[17px] max-w-3xl leading-[30px]"
@@ -60,7 +60,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 ml-10 flex flex-wrap gap-7">
+      <div className="mt-20 ml-10 flex flex-wrap gap-7" variants={textVariant()}>
         {projects.length > 0 ? (
           projects.map((project, index) => (
             <div key={`project-${index}`}>
@@ -80,7 +80,7 @@ const ProjectCard = ({
   githubLink,
   tags = [],
 
-  
+
 }) => {
     console.log(title, description, image, githubLink, tags);
   return (
