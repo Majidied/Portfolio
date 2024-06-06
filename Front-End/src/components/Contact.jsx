@@ -32,38 +32,74 @@ const Contact = () => {
 // template_rdn8z0c
 // service_i25tz4n
 // E-bh9mVzIndfkCNbo
-    emailjs
-      .send(
-        'service_i25tz4n',
-        'template_rdn8z0c',
-        {
-          from_name: form.name,
-          to_name: "mohammed majidi, lahlaouti haitam",
-          from_email: form.email,
-          to_email: "majidimajidi2003@gmail.com, lahlaoutihaitam01@gmail.com",
-          message: form.message,
-        },
-        'E-bh9mVzIndfkCNbo'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. We will get back to you as soon as possible.");
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
+emailjs
+  .send(
+    'service_i25tz4n',
+    'template_rdn8z0c',
+    {
+      from_name: form.name,
+      to_name: "mohammed majidi",
+      from_email: form.email,
+      to_email: "majidimajidi2003@gmail.com",
+      message: form.message,
+    },
+    'E-bh9mVzIndfkCNbo'
+  )
+  .then(
+    () => {
+      setLoading(false);
+      alert("Thank you. We will get back to you as soon as possible.");
 
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
-  };
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    },
+    (error) => {
+      setLoading(false);
+      console.error(error);
+
+      alert("Ahh, something went wrong. Please try again.");
+    }
+  );
+  
+  // template_j9wnz58
+  // service_jb4im54
+  // gfoG12YCQGWCv3a9g
+  emailjs
+    .send(
+      'service_jb4im54',
+      'template_j9wnz58',
+      {
+        from_name: form.name,
+        to_name: "haitam lahlaouti",
+        from_email: form.email,
+        to_email: "haitamlahlaouti01@gmail.com",
+        message: form.message,
+      },
+      'gfoG12YCQGWCv3a9g'
+    )
+    .then(
+      () => {
+        setLoading(false);
+        alert("Thank you. We will get back to you as soon as possible.");
+  
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      },
+      (error) => {
+        setLoading(false);
+        console.error(error);
+  
+        alert("Ahh, something went wrong. Please try again.");
+      }
+    );
+};
 
   return (
     <div

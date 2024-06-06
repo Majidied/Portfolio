@@ -18,7 +18,7 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836" ,
+        background: "#ffffff" ,
         animation: "fade-in 0.5s ease-in-out",
         transition: "background 0.5s ease-in-out",
       }}
@@ -38,7 +38,7 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className="text-white text-[24px] font-bold cursor-default">
+        <h3 className="text-black text-[24px] font-bold cursor-default">
           {experience.title}
         </h3>
         <p
@@ -60,7 +60,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
+            className="text-black text-[14px] pl-1 tracking-wider"
           >
             {point}
           </li>
@@ -83,7 +83,7 @@ const Experience = () => {
       </motion.div>
 
       <div className="mt-20 flex flex-col">
-        <VerticalTimeline lineColor="#151030">
+        <VerticalTimeline lineColor="#ff0000">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
