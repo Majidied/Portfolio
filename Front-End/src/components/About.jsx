@@ -7,7 +7,6 @@ import { categories } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import Tech from "./Tech";
-import front from "../assets/front.png";
 
 const ServiceCard = ({ index, image, title, onClick }) => (
     <Tilt className="xs:w-[250px] w-full">

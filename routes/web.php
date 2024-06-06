@@ -6,7 +6,6 @@ use App\Http\Controllers\skillsController;
 use App\Http\Controllers\clientsController;
 use App\Http\Controllers\projectsController;
 use App\Http\Controllers\contactsController;
-use App\Http\Controllers\DashboardController;
 
 Route::get('/api/skills', [skillsController::class, 'getSkills']);
 Route::get('/api/clients', [clientsController::class,'getClients']);
@@ -20,7 +19,6 @@ Route::post('/api/projects', [projectsController::class, 'addproject'])->name('a
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', [DashboardController::class,'index']) ->name('dashboard');
 Route::get('/admin', function() {
     return view('Admin.admin');
 });
@@ -28,3 +26,5 @@ Route::post('/admin', [adminController::class,'verifyAdmin'])->name('admin.login
 Route::get('/portfolio', function() {
     return view('portfolio');
 });
+
+Route::get('/deletSkill', [skillsController::class,'deleteLastRecord'])->name('delete-skill');
