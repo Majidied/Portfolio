@@ -18,8 +18,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
+    const { name, value } = e.target;
 
     setForm({
       ...form,
@@ -30,11 +29,13 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
+// template_rdn8z0c
+// service_i25tz4n
+// E-bh9mVzIndfkCNbo
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        'service_i25tz4n',
+        'template_rdn8z0c',
         {
           from_name: form.name,
           to_name: "mohammed majidi, lahlaouti haitam",
@@ -42,7 +43,7 @@ const Contact = () => {
           to_email: "majidimajidi2003@gmail.com, lahlaoutihaitam01@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        'E-bh9mVzIndfkCNbo'
       )
       .then(
         () => {
@@ -66,7 +67,7 @@ const Contact = () => {
 
   return (
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden"
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}

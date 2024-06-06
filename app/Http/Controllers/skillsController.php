@@ -23,4 +23,9 @@ class SkillsController extends Controller
         $skills->save();
         return redirect()->back()->with("success", "Skill saved successfully");
     }
+    public function deleteLastRecord() {
+        $clients = Skills::latest()->first();
+        $clients->delete();
+        return redirect()->back()->with("success","Client deleted successfully");
+    }
 }

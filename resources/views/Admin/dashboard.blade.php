@@ -61,13 +61,18 @@
                                 class="w-full bg-gray-100 border border-gray-300 rounded-md px-4 py-2">
                                 <option value="Back-end">Backend</option>
                                 <option value="Front-end">Frontend</option>
-                                <option value="Desktop">Desktop</option>
+                                <option value="Database">Database</option>
+                                <option value="Tools">Tools</option>
                             </select>
                         </div>
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Add
                             Skill</button>
-                    </form>
+                            <button>
+                                <a href="{{ route('delete-skill') }}"
+                                class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded">Delete Last Skill</a>
+                            </button>
+                           </form>
 
                 </section>
 
@@ -99,6 +104,7 @@
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Add
                             Project</button>
+
                     </form>
                 </section>
 
