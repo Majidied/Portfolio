@@ -1,12 +1,24 @@
-import React from "react";
-import { useGLTF } from "@react-three/drei";
+import React, { Suspense, useEffect, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF, useAnimations } from "@react-three/drei";
+import { useMediaQuery } from 'react-responsive';
+
+import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const { scene } = useGLTF("robot_playground.glb");
+  const group = useRef();
+  const { scene, animations } = useGLTF("./robot_playground.glb");
+  const { actions } = useAnimations(animations, group);
+
+  useEffect(() => {
+    if (actions) {
+      Object.values(actions).forEach((action) => action.play());
+    }
+  }, [actions]);
 
   return (
-    <mesh>
-      <hemisphereLight intensity={0.2} groundColor="black" />
+    <group ref={group}>
+      <hemisphereLight intensity={0.20} groundColor="black" />
       <spotLight
         position={[-10, 50, 10]}
         angle={0.12}
@@ -18,12 +30,37 @@ const Computers = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={scene}
-        scale={isMobile ? 0.4 : 1}
+        scale={isMobile ? 0.4 : 2}
         position={isMobile ? [0, -3, 1] : [0, -3.25, 0]}
         rotation={[-0.01, 0.5, -0.1]}
       />
-    </mesh>
+    </group>
   );
 };
 
-export default Computers;
+const ComputersCanvas = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  return (
+    <Canvas
+      frameloop="demand"
+      shadows
+      dpr={[0.8, 2]}
+      camera={{ position: [20, 3, 10], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true }}
+      style={isMobile ? { marginLeft: "0px" } : { width: "calc(100% - 200px)", marginLeft: "250px", paddingBottom: "100px" }}
+    >
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+<Computers isMobile={isMobile} />
+</Suspense>
+      <Preload all />
+    </Canvas>
+  );
+};
+
+export default ComputersCanvas;
