@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import {
   VerticalTimeline,
@@ -15,7 +17,7 @@ import { textVariant } from "../utils/motion";
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
-      contentStyle={{ 
+      contentStyle={{
         background: "#1d1836" ,
         animation: "fade-in 0.5s ease-in-out",
         transition: "background 0.5s ease-in-out",
