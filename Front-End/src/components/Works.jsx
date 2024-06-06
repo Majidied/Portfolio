@@ -39,8 +39,8 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} cursor-default`}>My work</p>
-        <h2 className={`${styles.sectionHeadText} cursor-default`}>
+        <p className={`ml-5 ${styles.sectionSubText} cursor-default`}>My work</p>
+        <h2 className={`ml-5 ${styles.sectionHeadText} cursor-default`}>
           Projects.
         </h2>
       </motion.div>
@@ -48,7 +48,7 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 ml-5 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           Following projects showcase my skills and experience through
           real-world examples of my work. Each project is briefly described with
@@ -58,7 +58,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 ml-10 flex flex-wrap gap-7">
         {projects.length > 0 ? (
           projects.map((project, index) => (
             <div key={`project-${index}`}>

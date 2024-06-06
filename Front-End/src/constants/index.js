@@ -290,31 +290,57 @@ const experiences = [
   
 
 
-const testimonials = [
-  {
-    testimonial:
-      "Professional design, clean and good-looking. Hope for the next co-opporation.",
-    name: "Son Anh Nguyen",
-    designation: "CFO",
-    company: "HA Smart",
-    image: avt1,
-  },
-  {
-    testimonial:
-      "Awesome works, really cute and modern design! A little bit in a nick of time but the result still worthy.",
-    name: "Huyen Trang Nguyen",
-    designation: "COO",
-    company: "DEF Corp",
-    image: avt2,
-  },
-  {
-    testimonial: "Great job! Very nice design, simple but effective.",
-    name: "Ly Nguyen",
-    designation: "CTO",
-    company: "Sunhouse Co., LTD",
-    image: avt3,
-  },
-];
+  const testimonials = [
+    {
+      testimonial:
+        "Le projet de gestion de centre de soutien, langue et formation a grandement amélioré notre organisation interne. L'équipe a su répondre à nos attentes avec des solutions innovantes.",
+      name: "Yassir Rochd",
+      designation: "Professeur Enseignement Supérieur",
+      company: "École Nationale des Sciences Appliquées Khouribga",
+      image: "path_to_image",
+    },
+    {
+      testimonial:
+        "L'application dédiée au don de sang a été une véritable révolution pour notre club. La qualité du code et la rapidité de l'exécution étaient exceptionnelles.",
+      name: "Association Ataa",
+      designation: "Association",
+      company: "Club Jeunes Leaders Marocains ENSA Khouribga",
+      image: "path_to_image",
+    },
+    // {
+    //   testimonial:
+    //     "Les compétences en développement web démontrées dans la réalisation du portfolio sont impressionnantes. Le site est à la fois moderne et fonctionnel.",
+    //   name: "",
+    //   designation: "Professeur Enseignement Supérieur",
+    //   company: "École Nationale des Sciences Appliquées Khouribga",
+    //   image: "path_to_image",
+    // },
+    {
+      testimonial:
+        "Le projet de prédiction des prix de voitures a apporté une nouvelle perspective à notre recherche en intelligence artificielle. Travail remarquable !",
+      name: "Fatima Zohra Ennaji",
+      designation: "Professeur Assistant à l'ENSA Khouribga",
+      company: "École Nationale des Sciences Appliquées Khouribga",
+      image: "path_to_image",
+    },
+    {
+      testimonial:
+        "La gestion des projets académiques pour les enseignants a considérablement facilité notre travail quotidien. Une réalisation exemplaire.",
+      name: "Imad HAFIDI",
+      designation: "Professeur de l'Enseignement Supérieur",
+      company: "École Nationale des Sciences Appliquées Khouribga",
+      image: "path_to_image",
+    },
+    {
+      testimonial:
+        "Le projet de gestion bancaire avancée a été un défi relevé avec brio. L'application est robuste et efficace.",
+        name: "Fatima Zohra Ennaji",
+        designation: "Professeur Assistant à l'ENSA Khouribga",
+      company: "École Nationale des Sciences Appliquées Khouribga",
+      image: "path_to_image",
+    },
+  ];
+  
 
 const projects = [
   {
