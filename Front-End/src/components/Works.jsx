@@ -64,7 +64,7 @@ const Works = () => {
         {projects.length > 0 ? (
           projects.map((project, index) => (
             <div key={`project-${index}`}>
-            <ProjectCard title={project.title} description={project.description} image={project.image} source_code_link={project.source_code_link} />
+            <ProjectCard title={project.title} description={project.description} image={project.image} githubLink={project.githubLink} />
           </div>))
         ) : (
           <p className="text-center text-white">No projects found.</p>
@@ -77,9 +77,12 @@ const ProjectCard = ({
     title,
   description,
   image,
-  source_code_link,
+  githubLink,
   tags = [],
+
+  
 }) => {
+    console.log(title, description, image, githubLink, tags);
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -99,7 +102,7 @@ const ProjectCard = ({
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
-              onClick={() => window.open(source_code_link)}
+              onClick={() => window.open(githubLink)}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
               <img

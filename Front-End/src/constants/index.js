@@ -34,6 +34,10 @@ import back from "../assets/back.png";
 import database from "../assets/database.png";
 import tools from "../assets/tools.png";
 import ensak from "../assets/ensak.png";
+import e1337 from "../assets/e1337.png";
+import jlmek from "../assets/jlmek.png";
+import alx from "../assets/alx.jpg";
+import gst2 from "../assets/gst2.png";
 import project1 from "../assets/portfolio1.png";
 import project2 from "../assets/portfolio2.png";
 import project3 from "../assets/portfolio4.png";
@@ -170,7 +174,8 @@ const experiences = [
       company_name: "École Nationale des Sciences Appliquées Khouribga",
       location: "Khouribga",
       date: "2024",
-      iconBg: ensak,
+      iconBg: "#ffffff",
+      icon: ensak, 
       points: [
         "Réalisé en HTML, CSS, PHP avec Laravel, React, et Three.js.",
       ],
@@ -180,7 +185,8 @@ const experiences = [
       company_name: "Club Jeunes Leaders Marocains ENSA Khouribga",
       location: "Khouribga",
       date: "2024",
-      iconBg: ensak,
+      iconBg: "#ffffff",
+      icon: jlmek,
       points: [
         "Réalisé en Angular, Spring Boot, Java.",
       ],
@@ -190,7 +196,8 @@ const experiences = [
       company_name: "École Nationale des Sciences Appliquées Khouribga",
       location: "Khouribga",
       date: "2024",
-      iconBg: ensak,
+      iconBg: "#ffffff",
+      icon: ensak, 
       points: [
         "Réalisé en Java et JavaFX.",
       ],
@@ -200,7 +207,8 @@ const experiences = [
       company_name: "École Nationale des Sciences Appliquées Khouribga",
       location: "Khouribga",
       date: "2023",
-      iconBg: ensak,
+      iconBg: "#ffffff",
+      icon: ensak, 
       points: [
         "Réalisé en PYTHON.",
       ],
@@ -210,7 +218,8 @@ const experiences = [
       company_name: "École Nationale des Sciences Appliquées Khouribga",
       location: "Khouribga",
       date: "2023",
-      iconBg: ensak,
+      iconBg: "#ffffff",
+      icon: ensak,
       points: [
         "Réalisé en C++.",
       ],
@@ -220,7 +229,8 @@ const experiences = [
       company_name: "École Nationale des Sciences Appliquées Khouribga",
       location: "Khouribga",
       date: "2023",
-      iconBg: ensak,
+      iconBg: "#ffffff",
+      icon: ensak,
       points: [
         "Réalisé avec MERISE, SQL, PHP, JavaScript, HTML et CSS.",
       ],
@@ -229,7 +239,8 @@ const experiences = [
       title: "Études en Génie Informatique",
       company_name: "École Nationale des Sciences Appliquées Khouribga",
       date: "2023 - présent",
-      iconBg: ensak,
+      iconBg: "#ffffff",
+      icon: ensak,
       points: [
         "Apprentissage de Merise, SQL, C++, PYTHON, Algorithmes avancés.",
         "Programmation Assembleur, JAVA et JavaFX/Swing.",
@@ -242,7 +253,7 @@ const experiences = [
       title: "Programme ALX Software Engineer",
       person: "Mohammed Majidi",
       date: "2022 - 2023",
-      iconBg: "#383E56",
+      icon: alx,
       points: [
         "Apprentissage approfondi des langages de programmation C et Python.",
         "Réalisation de plusieurs projets inclus dans le programme.",
@@ -253,7 +264,8 @@ const experiences = [
       person: "Haitam Lahlaouti",
       status: "Admis au level 08, devenu student",
       date: "2022 - 2023",
-      iconBg: "#383E56",
+      iconBg: "#000000",
+      icon: e1337,
       points: [
         "Apprentissage approfondi des langages de programmation C et Python.",
         "Réalisation de plusieurs projets inclus dans le programme.",
@@ -264,7 +276,8 @@ const experiences = [
       company_name: "École Nationale des Sciences Appliquées Khouribga",
       location: "Khouribga",
       date: "2021 - 2023",
-      iconBg: ensak,
+      iconBg: "#ffffff",
+      icon: ensak,
       points: [
         "Étude de l'algorithmique et des langages de programmation C et Python.",
         "Réalisation de projets de gestion de bibliothèque, gestion des billets d'aéroport, gestion de réservation des bus, et de location de voitures en C.",
@@ -288,7 +301,8 @@ const experiences = [
       company_name: "Groupe Scolaire Tazi 2",
       location: "Casablanca",
       date: "2020 - 2021",
-      iconBg: "#383E56",
+      iconBg: "#ffffff",
+      icon: gst2,
       points: [
         "Étude des Sciences Mathématiques B.",
       ],
